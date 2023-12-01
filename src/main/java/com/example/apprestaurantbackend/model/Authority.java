@@ -15,16 +15,17 @@ import java.util.UUID;
 @NoArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Permission implements GrantedAuthority {
+@Table(name = "permission")
+public class Authority implements GrantedAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     UUID id;
 
     @Enumerated(EnumType.STRING)
-    PermissionEnum permission;
+    PermissionEnum name;
 
     @Override
     public String getAuthority() {
-        return permission.name();
+        return name.toString();
     }
 }

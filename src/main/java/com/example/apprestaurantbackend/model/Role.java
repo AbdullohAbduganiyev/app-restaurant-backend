@@ -16,11 +16,9 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 public class Role extends AbsBaseEntity {
-
     @Column(nullable = false, unique = true)
     String name;
 
     @ManyToMany
-    List<Permission> permissions;
-
+    List<Authority> permissions;
 }
