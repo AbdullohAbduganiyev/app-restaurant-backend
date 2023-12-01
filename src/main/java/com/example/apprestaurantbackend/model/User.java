@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
@@ -41,6 +42,7 @@ public class User extends AbsBaseEntity implements UserDetails {
                 .stream()
                 .map(Role::getPermissions)
                 .flatMap(Collection::stream)
+//                .flatMap(role -> role.getPermissions().stream())
                 .distinct()
                 .toList();
     }

@@ -1,0 +1,16 @@
+spring:
+    datasource:
+        password: 7410
+        url: jdbc:postgresql://localhost:5432/restaurant
+        username: postgres
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+        show-sql: true
+
+app:
+    user:
+        email: admin@gmail.com
+        password: 123
+    role:
+        name: SUPER_ADMIN

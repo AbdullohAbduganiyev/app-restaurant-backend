@@ -1,5 +1,6 @@
 package com.example.apprestaurantbackend.model;
 
+import com.example.apprestaurantbackend.enums.PermissionEnum;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,10 @@ public class Authority implements GrantedAuthority {
 
     @Enumerated(EnumType.STRING)
     PermissionEnum name;
+
+    public Authority(PermissionEnum name) {
+        this.name = name;
+    }
 
     @Override
     public String getAuthority() {

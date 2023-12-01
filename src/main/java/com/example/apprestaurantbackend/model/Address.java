@@ -20,5 +20,5 @@ public class Address extends AbsBaseEntity {
     String street;
 
     @Column(nullable = false)
-    String homeNumber;
+    String home;
 }
